@@ -1,0 +1,7 @@
+base     codowik
+author   Avinash D Silva
+email    avinash.roshan.dsilva@gmail.com
+date     2013-11-23
+name     Codowik Template
+desc     Template built for building great documentation
+url      http://www.dokuwiki.org/template:codowik
