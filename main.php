@@ -28,7 +28,7 @@ $showSidebar = $hasSidebar && ($ACT=='show');
     <?php echo tpl_favicon(array('favicon', 'mobile')) ?>
     <?php tpl_includeFile('meta.html') ?>
     
-<script type="application/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>    
+<script type="application/javascript" src="<?php print DOKU_TPL; ?>jquery-1.10.2.min.js"></script>    
 <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 <link href="<?php print DOKU_TPL; ?>css/ui.layout.css" rel="stylesheet">
 <script  src="<?php print DOKU_TPL; ?>layout.js" type="text/javascript"></script> 
