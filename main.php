@@ -12,11 +12,15 @@
  * @license  GPL 2 (http://www.gnu.org/licenses/gpl.html)
  */
 
+// require functions
+require_once(dirname(__FILE__) . DIRECTORY_SEPARATOR .'bootstrap.php');
+
 if (!defined('DOKU_INC')) die(); /* must be run from within DokuWiki */
 header('X-UA-Compatible: IE=edge,chrome=1');
 
 $hasSidebar = page_findnearest($conf['sidebar']);
 $showSidebar = $hasSidebar && ($ACT=='show');
+
 ?><!DOCTYPE html>
 <html lang="<?php echo $conf['lang'] ?>" dir="<?php echo $lang['direction'] ?>" class="no-js">
 <head>
@@ -27,62 +31,56 @@ $showSidebar = $hasSidebar && ($ACT=='show');
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <?php echo tpl_favicon(array('favicon', 'mobile')) ?>
     <?php tpl_includeFile('meta.html') ?>
-    
-<script type="application/javascript" src="<?php print DOKU_TPL; ?>jquery-1.10.2.min.js"></script>    
+
 <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 <link href="<?php print DOKU_TPL; ?>css/ui.layout.css" rel="stylesheet">
-<script  src="<?php print DOKU_TPL; ?>layout.js" type="text/javascript"></script> 
+
+<?php echo tpl_js('layout.js'); ?>
+
 <script type="text/javascript">
-            $(document).ready(function() {
-            $('#container').layout({            
-            maskContents: true,
-            center: {applyDefaultStyles: true},
-            west: {applyDefaultStyles: true, minSize: 300}
-            });
-            
-            jQuery('.ui-layout-pane').each( function() {
-            var el = jQuery(this);
-            //el.width( el.width() + 10 );
-            } );
-            
-    $(".codo_side_content [href]").each(function() {
-    if (this.href == window.location.href) {
-        $(this).addClass("codo_active");
+jQuery(function ()
+{
+    jQuery('#container').layout({
+        maskContents: true,
+        center: {
+            applyDefaultStyles: true
+        },
+        west: {
+            applyDefaultStyles: true,
+            minSize: 300
         }
     });
 
-//var x=1;
-        function apply_space(elem,times){
-        //console.log(x++);    
-            
-           
-           $(elem).find( ">li>div>a" ).each(function(){
-               
-                console.log($(this));
-               $(this).html(times+$(this).html())
-               
-               });
-               
-            $(elem).find( ">li>ul" ).each(function(){
-                
-               apply_space($(this),times+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
-                
-            });   
-            
-            
-            
-        }
-        
-        
-        apply_space($('.codo_side_content >ul'),'&nbsp;');
+    jQuery('.ui-layout-pane').each(function () {
+        var el = jQuery(this);
+    });
 
-            
-            
-            });
+    jQuery(".codo_side_content [href]").each(function () {
+        if (this.href == window.location.href) {
+            jQuery(this).addClass("codo_active");
+        }
+    });
+
+    function apply_space(elem, times) {
+
+        jQuery(elem).find(">li>div>a").each(function()
+        {
+            jQuery(this).html(times + jQuery(this).html())
+
+        });
+
+        jQuery(elem).find(">li>ul").each(function()
+        {
+            apply_space(jQuery(this), times + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+        });
+
+    }
+
+    apply_space(jQuery('.codo_side_content >ul'), '&nbsp;');
+
+});
 
 </script>
-
-
 
 </head>
 
