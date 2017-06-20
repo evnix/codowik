@@ -33,7 +33,7 @@ $showSidebar = $hasSidebar && ($ACT=='show');
     <?php tpl_includeFile('meta.html') ?>
 
 <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-<link href="<?php print DOKU_TPL; ?>css/ui.layout.css" rel="stylesheet">
+<link href="<?php print DOKU_TPL; ?>css/ui.layout.css?v=2.1" rel="stylesheet">
 
 <?php echo tpl_js('layout.js'); ?>
 
@@ -86,7 +86,7 @@ jQuery(function ()
 
 <body>
     
-     <div id="container">
+     <div id="container" style="height:100vh">
             <div class="ui-layout-center">
     
     <!--[if lte IE 7 ]><div id="IE7"><![endif]--><!--[if IE 8 ]><div id="IE8"><![endif]-->

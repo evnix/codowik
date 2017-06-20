@@ -18,36 +18,11 @@
  *	DEFAULT FONT
  *	Just to make demo-pages look better - not actually relevant to Layout!
  */
- 
-html, body {
-                
-                width:		100%;
-                height:		100%;					
-                padding:	0;
-                margin:		0;
-                overflow:	auto; /* when page gets too small */
-            }
-            #container {
-               
-                height:		100%;
-
-                width:		100%;
-
-                min-width:	700px;
-                _width:		700px; /* min-width for IE6 */
-            }
-            .pane {
-                display:	none; /* will appear when layout inits */
-            } 
- 
 body {
-    background: #fcfcfc;
-	font-family: 'Lato', sans-serif;
+	font-family: Geneva, Arial, Helvetica, sans-serif;
 	font-size:   100%;
 	*font-size:  80%;
 }
-
-
 
 /*
  *	PANES & CONTENT-DIVs
@@ -218,6 +193,7 @@ iframe.ui-layout-mask {}	/* extra mask for objects/applets */
 		overflow:	visible !important;
 	}
 	body.ui-layout-container {
+		
 		position:	static !important;
 		top:		auto !important;
 		bottom:		auto !important;
@@ -247,4 +223,3 @@ iframe.ui-layout-mask {}	/* extra mask for objects/applets */
 		overflow:	visible !important;
 	}
 }
-
