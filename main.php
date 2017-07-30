@@ -32,7 +32,7 @@ $showSidebar = $hasSidebar && ($ACT=='show');
     <?php echo tpl_favicon(array('favicon', 'mobile')) ?>
     <?php tpl_includeFile('meta.html') ?>
 
-<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
 <link href="<?php print DOKU_TPL; ?>css/ui.layout.css?v=2.1" rel="stylesheet">
 
 <?php echo tpl_js('layout.js'); ?>
