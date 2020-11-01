@@ -77,3 +77,6 @@ jQuery(function(){
         $content.css('min-height', $sidebar.height());
     }
 });
+
+/* DOKUWIKI:include js/layout.js */
+/* DOKUWIKI:include js/main.js */

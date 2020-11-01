@@ -12,9 +12,6 @@
  * @license  GPL 2 (http://www.gnu.org/licenses/gpl.html)
  */
 
-// require functions
-require_once(dirname(__FILE__) . DIRECTORY_SEPARATOR .'bootstrap.php');
-
 if (!defined('DOKU_INC')) die(); /* must be run from within DokuWiki */
 header('X-UA-Compatible: IE=edge,chrome=1');
 
@@ -33,60 +30,6 @@ $showSidebar = $hasSidebar && ($ACT=='show');
     <?php tpl_includeFile('meta.html') ?>
 
 <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-<link href="<?php print DOKU_TPL; ?>css/ui.layout.css?v=2.1" rel="stylesheet">
-
-<?php echo tpl_js('layout.js'); ?>
-
-<script type="text/javascript">
-jQuery(function ()
-{
-    jQuery('#container').layout({
-        maskContents: true,
-        center: {
-            applyDefaultStyles: true
-        },
-        west: {
-            applyDefaultStyles: true,
-            minSize: 300
-        }
-    });
-
-    jQuery('.ui-layout-pane').each(function () {
-        var el = jQuery(this);
-    });
-
-    jQuery(".codo_side_content [href]").each(function () {
-        if (this.href == window.location.href) {
-            jQuery(this).addClass("codo_active");
-        }
-    });
-
-    function apply_space(elem, times) {
-
-        jQuery(elem).find(">li>div>a").each(function()
-        {
-            jQuery(this).html(times + jQuery(this).html())
-
-        });
-
-        //2017/09/20 Dirk Schnitzler: Apply spaces to the currently active page, too
-        jQuery(elem).find(">li>div>span>a").each(function()
-        {
-            jQuery(this).html(times + jQuery(this).html())
-        });
-
-        jQuery(elem).find(">li>ul").each(function()
-        {
-            apply_space(jQuery(this), times + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
-        });
-
-    }
-
-    apply_space(jQuery('.codo_side_content >ul'), '&nbsp;');
-
-});
-
-</script>
 
 </head>
 
