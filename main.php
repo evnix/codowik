@@ -12,9 +12,6 @@
  * @license  GPL 2 (http://www.gnu.org/licenses/gpl.html)
  */
 
-// require functions
-require_once(dirname(__FILE__) . DIRECTORY_SEPARATOR .'bootstrap.php');
-
 if (!defined('DOKU_INC')) die(); /* must be run from within DokuWiki */
 header('X-UA-Compatible: IE=edge,chrome=1');
 
