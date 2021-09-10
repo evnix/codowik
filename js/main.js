@@ -7,7 +7,8 @@ jQuery(function ()
         },
         west: {
             applyDefaultStyles: true,
-            minSize: 300
+            minSize: 300,
+            enableCursorHotkey: JSINFO.template_codowik_sidebarHotkey
         }
     });
 
